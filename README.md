@@ -4,7 +4,7 @@
 Aishaan Datt\
 Prayag Sharma
 # Overview
-This project is a full fledged MERN stack E-Commerce website and  features the following:
+#####This project is a full fledged MERN stack E-Commerce website and  features the following:\
 •	Full featured shopping cart\
 •	Product reviews and ratings\
 •	Top products carousel\
