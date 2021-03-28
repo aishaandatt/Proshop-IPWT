@@ -1,9 +1,9 @@
 # Proshop-IPWT
 
 # Team Members
-Aishaan Datt
+Aishaan Datt\
 Prayag Sharma
-
+# Overview
 This project is a full fledged MERN stack E-Commerce website and  features the following:
 •	Full featured shopping cart
 •	Product reviews and ratings
