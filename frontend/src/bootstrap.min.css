@@ -218,7 +218,7 @@ label {
   margin-bottom: 0.5rem;
 }
 button {
-  border-radius: 0;
+  border-radius: 0rem;
 }
 button:focus:not(:focus-visible) {
   outline: 0;
@@ -1911,7 +1911,7 @@ pre code {
 .form-control {
   display: block;
   width: 100%;
-  height: calc(1.5em + 1rem + 2px);
+  height: calc(1.2em + 1rem + 2px);
   padding: 0.5rem 1.1rem;
   font-size: 1.063rem;
   font-weight: 400;
@@ -1920,7 +1920,7 @@ pre code {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4490,11 +4490,11 @@ input[type='submit'].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.875);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  filter: drop-shadow(10px 8px 10px #d7d7d7);
+  box-shadow: -5px -5px 20px #ffffff, 5px 5px 15px #9898985e;
 }
 
 .card > hr {
@@ -9538,7 +9538,7 @@ a.text-dark:hover {
   font-size: 0.930125rem;
 }
 .navbar.bg-dark {
-  background-color: #24bd82 !important;
+  background-color: #01497c !important;
 }
 .navbar.bg-light {
   background-color: #fff !important;
@@ -9713,7 +9713,7 @@ table-warning {
   background-color: #f0ad4e;
 }
 .alert-danger {
-  background-color: #d9534f;
+  background-color: #ec4b46;
 }
 .alert-light {
   background-color: #f8f9fa;

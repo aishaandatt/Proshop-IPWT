@@ -1,30 +1,35 @@
-import React, {useState, useEffect} from 'react'  //useState is in react hooks
-import {Row,Col} from 'react-bootstrap'
+import React, { useEffect } from 'react'  //useState is in react hooks
+import { Row, Col } from 'react-bootstrap'
 import Product from '../Components/Product'
-import axios from 'axios'
+import Message from '../Components/Message'
+import Loader from '../Components/Loader'
+import { useDispatch, useSelector } from 'react-redux'
+import { listProducts } from '../actions/productActions'
 
-const HomeScreen = () => {
-    const[products, setproducts] = useState([]) //what are we gonna call 'products' and to make changes in 'setproducts' and to pass the default in in the empty array
-    // useeffect is to make a request to backend
+const HomeScreen = ({ match }) => {
+
+    const keyword = match.params.keyword
+    const dispatch = useDispatch()
+    const productList = useSelector(state => state.productList)
+    const { loading, error, products } = productList
+
     useEffect(() => {
-       const fetchProducts = async() =>{
-            const { data } = await axios.get('/api/products')
-            
-            setproducts(data)
-       }
-       fetchProducts()
-    }, [] )
+        dispatch(listProducts(keyword))
+    }, [dispatch, keyword])
+
+
     return (
         <>
-        <h1>Latest Products</h1>
-        <Row>
-            {products.map((product) => (  //what we want to show for each product
-                <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                    <Product product={product} /> 
-                 </Col>
-            ))}
-        </Row>
-            
+            <h1>Latest Products</h1>
+            {loading ? (<Loader />) : error ? (<Message variant='danger'>{error}</Message>) : (<Row>
+                {products.map((product) => (  //what we want to show for each product
+                    <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                        <Product product={product} />
+                    </Col>
+                ))}
+            </Row>
+            )}
+
         </>
     )
 
